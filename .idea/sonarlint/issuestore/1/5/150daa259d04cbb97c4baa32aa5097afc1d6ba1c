@@ -1,0 +1,16 @@
+
+1
+java:S1700"Rename field "message"(ù„è¿ûÿÿÿÿ
+M
+java:S1068"+Remove this unused "message" private field.(ù„è¿ûÿÿÿÿ8ğúë Ä0
+D
+java:S1068"(Remove this unused "time" private field.(ÜÌƒt8ñúë Ä0
+G
+java:S1068"*Remove this unused "sender" private field.(ù„Çñ8ñúë Ä0
+N
+java:S1068",Remove this unused "receiver" private field.(Ñ¬îıüÿÿÿÿ8ñúë Ä0
+G
+java:S1068	"*Remove this unused "isMine" private field.(¹ûá8òúë Ä0
+L
+java:S1068
+"*Remove this unused "isRead" private field.(ˆÚé¸úÿÿÿÿ8òúë Ä0

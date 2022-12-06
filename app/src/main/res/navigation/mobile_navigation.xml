@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_chat">
+
+    <fragment
+        android:id="@+id/navigation_chat"
+        android:name="com.example.theonaui2.ui.main.ChatsFragmentkt"
+        android:label="Chats"
+        tools:layout="@layout/fragment_chats" >
+        <action
+            android:id="@+id/action_navigation_chat_to_navigation_map"
+            app:destination="@id/navigation_map" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_map"
+        android:name="com.example.theonaui2.ui.main.MapFragment"
+        android:label="Chats"
+        tools:layout="@layout/fragment_map" >
+        <action
+            android:id="@+id/action_navigation_map_to_navigation_call"
+            app:destination="@id/navigation_call" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_call"
+        android:name="com.example.theonaui2.ui.main.CallFragment"
+        android:label="Call"
+        tools:layout="@layout/fragment_call" >
+        <action
+            android:id="@+id/action_navigation_call_to_navigation_storage"
+            app:destination="@id/navigation_storage" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_storage"
+        android:name="com.example.theonaui2.ui.main.StorageFragment"
+        android:label="Storage"
+        tools:layout="@layout/fragment_storage" />
+</navigation>
