@@ -1,0 +1,12 @@
+{
+  "modules": [
+    {
+      "name": "TheonaUI2",
+      "languageLevel": 11
+    },
+    {
+      "name": "TheonaUI2.app",
+      "languageLevel": 11
+    }
+  ]
+}

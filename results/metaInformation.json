@@ -1,0 +1,18 @@
+{
+  "total": 0,
+  "tools inspection": {
+    "Code Inspection": 0
+  },
+  "attributes": {
+    "vcs": {
+      "sarifIdea": {
+        "repositoryUri": "https://github.com/xsafter/TheonaUI2",
+        "revisionId": "5133a6df224080b35d59424ad21e0535df0357c0",
+        "branch": "main"
+      }
+    },
+    "deviceId": "200820300000000-85c6-21bb-dbd6-801739ecb4af",
+    "jobUrl": "https://github.com/xsafter/TheonaUI2/actions/runs/3630073940",
+    "repoUrl": "https://github.com/xsafter/TheonaUI2"
+  }
+}

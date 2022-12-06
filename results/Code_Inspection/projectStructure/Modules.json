@@ -1,0 +1,42 @@
+{
+  "modules": [
+    {
+      "name": "TheonaUI2",
+      "contentEntries": [
+        {
+          "path": "file://$PROJECT_DIR$",
+          "sourceFolders": []
+        }
+      ],
+      "orderEntries": [
+        {
+          "name": "jbr-11",
+          "type": "SDK"
+        },
+        {
+          "name": "<Module source>",
+          "type": "Own sources"
+        }
+      ]
+    },
+    {
+      "name": "TheonaUI2.app",
+      "contentEntries": [
+        {
+          "path": "file://$PROJECT_DIR$/app",
+          "sourceFolders": []
+        }
+      ],
+      "orderEntries": [
+        {
+          "name": "jbr-11",
+          "type": "SDK"
+        },
+        {
+          "name": "<Module source>",
+          "type": "Own sources"
+        }
+      ]
+    }
+  ]
+}
