@@ -8,7 +8,7 @@
     tools:context=".ui.MainActivity">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/base_fab"
+        android:id="@+id/base_add_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -17,13 +17,13 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/call_fab"
+        android:id="@+id/qr_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:src="@drawable/qr"
         app:fabSize="mini"
-        app:layout_constraintBottom_toTopOf="@+id/base_fab"
+        app:layout_constraintBottom_toTopOf="@+id/base_add_fab"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
@@ -31,20 +31,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="Audio Call"
+        android:text="Use QR code"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@id/call_fab"
-        app:layout_constraintEnd_toStartOf="@id/call_fab"
-        app:layout_constraintTop_toTopOf="@id/call_fab" />
+        app:layout_constraintBottom_toBottomOf="@id/qr_fab"
+        app:layout_constraintEnd_toStartOf="@id/qr_fab"
+        app:layout_constraintTop_toTopOf="@id/qr_fab" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/video_call_fab"
+        android:id="@+id/link_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:src="@drawable/link"
         app:fabSize="mini"
-        app:layout_constraintBottom_toTopOf="@id/call_fab"
+        app:layout_constraintBottom_toTopOf="@id/qr_fab"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
@@ -52,10 +52,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="Video Call"
+        android:text="Use link"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@id/video_call_fab"
-        app:layout_constraintEnd_toStartOf="@id/video_call_fab"
-        app:layout_constraintTop_toTopOf="@id/video_call_fab" />
+        app:layout_constraintBottom_toBottomOf="@id/link_fab"
+        app:layout_constraintEnd_toStartOf="@id/link_fab"
+        app:layout_constraintTop_toTopOf="@id/link_fab" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

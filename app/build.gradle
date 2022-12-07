@@ -66,4 +66,10 @@ dependencies {
 
     implementation 'com.getbase:floatingactionbutton:1.10.1'
 
+    implementation 'org.osmdroid:osmdroid-android:6.1.13'
+
+    implementation 'androidx.preference:preference:1.2.0'
+
+    implementation 'com.nambimobile.widgets:expandable-fab:1.2.1'
+
 }

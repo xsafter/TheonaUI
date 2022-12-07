@@ -18,9 +18,9 @@ public class TestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test_layout);
 
-        FloatingActionButton baseFab = findViewById(R.id.base_fab);
-        FloatingActionButton callFab = findViewById(R.id.call_fab);
-        FloatingActionButton videoFab = findViewById(R.id.video_call_fab);
+        FloatingActionButton baseFab = findViewById(R.id.base_add_fab);
+        FloatingActionButton callFab = findViewById(R.id.qr_fab);
+        FloatingActionButton videoFab = findViewById(R.id.link_fab);
         TextView textOne = findViewById(R.id.text_one);
         TextView textTwo = findViewById(R.id.text_two);
 
