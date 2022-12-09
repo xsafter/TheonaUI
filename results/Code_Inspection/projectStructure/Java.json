@@ -2,11 +2,11 @@
   "modules": [
     {
       "name": "TheonaUI2",
-      "languageLevel": 11
+      "languageLevel": 17
     },
     {
       "name": "TheonaUI2.app",
-      "languageLevel": 11
+      "languageLevel": 17
     }
   ]
 }
