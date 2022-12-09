@@ -31,9 +31,9 @@ public class ChatsFragment extends Fragment {
         super.onCreate(savedInstanceState);
         View view = getLayoutInflater().inflate(R.layout.fragment_chats, null);
 
-        LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.linearLayout);
-        linearLayout.setClickable(true);
-        linearLayout.setOnClickListener(view1 -> {
+        View include1 = view.findViewById(R.id.include1);
+        include1.setClickable(true);
+        include1.setOnClickListener(view1 -> {
             Intent intent = new Intent(getActivity(), ChatActivity.class);
             startActivity(intent);
         });
@@ -47,18 +47,4 @@ public class ChatsFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_chats, container, false);
     }
 
-    public void openQRActivity(View view) {
-        Intent intent = new Intent(getActivity(), ChatActivity.class);
-        startActivity(intent);
-    }
-
-    public void openLinkActivity(View view) {
-        Intent intent = new Intent(getActivity(), ChatActivity.class);
-        startActivity(intent);
-    }
-
-    public void openChatActivity(View view) {
-        Intent intent = new Intent(getActivity(), ChatActivity.class);
-        startActivity(intent);
-    }
 }

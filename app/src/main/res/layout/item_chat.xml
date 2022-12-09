@@ -9,7 +9,6 @@
     android:background="?android:attr/selectableItemBackground"
     android:clickable="true"
     android:focusable="true"
-    android:onClick="clickItem"
     tools:context=".ItemChatActivity">
 
     <com.google.android.material.imageview.ShapeableImageView
@@ -19,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearanceOverlay="@style/roundedImageView"
-        tools:srcCompat="@drawable/account" />
+        tools:srcCompat="@drawable/baseline_account_circle_24" />
 
     <TextView
         android:id="@+id/textView4"

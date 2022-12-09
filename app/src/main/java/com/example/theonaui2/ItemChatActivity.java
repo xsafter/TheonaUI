@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Layout;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.example.theonaui2.ui.main.chat.ChatActivity;
@@ -18,7 +19,6 @@ public class ItemChatActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.item_chat);
         //If the user clicks on the item, go to the chat activity
-
     }
 
     @Override
