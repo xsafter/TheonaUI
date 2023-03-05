@@ -12,7 +12,7 @@
     tools:context=".ItemChatActivity">
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/chatImage"
         android:layout_width="74dp"
         android:layout_height="74dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +21,7 @@
         tools:srcCompat="@drawable/baseline_account_circle_24" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/chatName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -29,14 +29,14 @@
         android:text="Lorem Ipsum"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="@color/black_variant"
-        app:layout_constraintEnd_toStartOf="@+id/textView5"
+        app:layout_constraintEnd_toStartOf="@+id/lastMessageTime"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView7"
+        app:layout_constraintStart_toEndOf="@+id/chatImage"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@tools:sample/full_names" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/lastMessageTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -46,7 +46,7 @@
         tools:text="@tools:sample/date/hhmm" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/lastMessageText"
         android:layout_width="226dp"
         android:layout_height="19dp"
         android:layout_marginStart="8dp"
@@ -56,12 +56,12 @@
         android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView7"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintStart_toEndOf="@+id/chatImage"
+        app:layout_constraintTop_toBottomOf="@+id/chatName"
         tools:text="@tools:sample/lorem/random" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/unreadMessagesCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -76,5 +76,5 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/lastMessageTime" />
 </androidx.constraintlayout.widget.ConstraintLayout>

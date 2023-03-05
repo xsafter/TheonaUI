@@ -6,77 +6,49 @@
     android:layout_height="match_parent"
     tools:context="com.example.theonaui2.ui.main.ChatsFragment">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chats_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:clickable="true"
-        android:orientation="vertical">
-
-        <include
-            android:id="@+id/include1"
-            layout="@layout/item_chat"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp" />
-
-        <include
-            android:id="@+id/include2"
-            layout="@layout/item_chat"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp" />
-
-        <include
-            android:id="@+id/include3"
-            layout="@layout/item_chat" />
-    </LinearLayout>
-
-    <com.nambimobile.widgets.efab.ExpandableFabLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.951">
+        tools:listitem="@layout/item_chat"
+        app:layoutManager="LinearLayoutManager">
+    </androidx.recyclerview.widget.RecyclerView>
 
-        <!-- The next 3 Views will only display in portrait orientation -->
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:menu_colorNormal="@color/accent_color"
+        app:menu_colorPressed="@color/accent_color_variant">
 
-        <com.nambimobile.widgets.efab.ExpandableFab
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/addvialink1"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
+            android:src="@drawable/link"
+            app:fab_colorNormal="@color/abstract_first_dark"
+            app:fab_colorPressed="@color/accent_color_variant" />
 
-            android:layout_margin="10dp"
-            app:efab_color="@color/accent_color"
-            app:fab_colorPressed="@color/second_color"
-            app:efab_orientation="portrait" />
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/addviaqr1"
 
-        <com.nambimobile.widgets.efab.FabOption
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:fab_orientation="portrait"
-            app:fab_color="@color/accent_color"
-            app:fab_icon="@drawable/qr"
-            app:label_text="Add contact via QR code"
-            android:onClick="openQRActivity"/>
+            android:src="@drawable/qr"
+            app:fab_colorNormal="@color/abstract_first_dark"
+            app:fab_colorPressed="@color/accent_color_variant" />
 
-        <com.nambimobile.widgets.efab.FabOption
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:fab_orientation="portrait"
-            app:fab_color="@color/accent_color"
-            app:fab_icon="@drawable/link"
-            app:label_text="Add contact via link"
-            android:onClick="openLinkActivity"/>
-
-    </com.nambimobile.widgets.efab.ExpandableFabLayout>
+    </com.github.clans.fab.FloatingActionMenu>
 
     <!--    <androidx.recyclerview.widget.RecyclerView-->
 <!--        android:layout_width="0dp"-->

@@ -1,7 +1,9 @@
 package com.example.theonaui2.ui;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.widget.Button;
 
 import com.example.theonaui2.R;
@@ -43,6 +45,11 @@ public class MainActivity extends AppCompatActivity {
             //Go to chat/ChatActivity.kt with intent
             startActivity(new Intent(MainActivity.this, ChatActivity.class));
         });
+    }
+
+
+    public static Context getAppContext() {
+        return getAppContext();
     }
 
 }

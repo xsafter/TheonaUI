@@ -12,14 +12,28 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.theonaui2.AddvialinkActivity;
+import com.example.theonaui2.QRScanActivity;
 import com.example.theonaui2.R;
 import com.example.theonaui2.ui.MainActivity;
 import com.example.theonaui2.ui.main.chat.ChatActivity;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.example.theonaui2.ui.main.data.ChatElementData;
+import com.github.clans.fab.FloatingActionButton;
+
+import java.util.ArrayList;
 
 public class ChatsFragment extends Fragment {
-    private Boolean eachFabVisible;
+    private FloatingActionButton addvialink;
+    private FloatingActionButton addviaqr;
+
+    private ArrayList<ChatElementData> chats;
+
+
+    RecyclerView chatsList;
+
     View view;
 
     public ChatsFragment() {
@@ -29,22 +43,32 @@ public class ChatsFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        View view = getLayoutInflater().inflate(R.layout.fragment_chats, null);
+        view = getLayoutInflater().inflate(R.layout.fragment_chats, null);
+        bindView();
 
-        View include1 = view.findViewById(R.id.include1);
-        include1.setClickable(true);
-        include1.setOnClickListener(view1 -> {
-            Intent intent = new Intent(getActivity(), ChatActivity.class);
-            startActivity(intent);
-        });
+        chatsList = view.findViewById(R.id.chats_list);
 
+        chats = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            chats.add(new ChatElementData().createTestData());
+        }
+
+        RecyclerView.Adapter<ChatListAdapter.ViewHolder> adapter = new ChatListAdapter(getActivity(), chats);
+        chatsList.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
+        chatsList.setLayoutManager(new LinearLayoutManager(getActivity()));
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_chats, container, false);
-        return inflater.inflate(R.layout.fragment_chats, container, false);
+        chatsList = view.findViewById(R.id.chats_list);
+        return view;
     }
 
+    private void bindView() {
+        addvialink = view.findViewById(R.id.addvialink1);
+        addviaqr = view.findViewById(R.id.addviaqr1);
+    }
 }
