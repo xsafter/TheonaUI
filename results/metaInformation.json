@@ -6,13 +6,13 @@
   "attributes": {
     "vcs": {
       "sarifIdea": {
-        "repositoryUri": "https://github.com/xsafter/TheonaUI2",
-        "revisionId": "f694ebe72f36e47b025dc36ba30ab10511aa5fc9",
+        "repositoryUri": "https://github.com/xsafter/TheonaUI",
+        "revisionId": "471be5d82efb96f431f156d2ca7eb32e9f979ef8",
         "branch": "main"
       }
     },
-    "deviceId": "200820300000000-85c6-21bb-dbd6-801739ecb4af",
-    "jobUrl": "https://github.com/xsafter/TheonaUI2/actions/runs/3660145777",
-    "repoUrl": "https://github.com/xsafter/TheonaUI2"
+    "deviceId": "200820300000000-2bfb-0402-46c6-bbe9c7e47684",
+    "jobUrl": "https://github.com/xsafter/TheonaUI/actions/runs/4343415198",
+    "repoUrl": "https://github.com/xsafter/TheonaUI"
   }
 }

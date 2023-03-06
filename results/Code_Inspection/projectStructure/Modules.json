@@ -10,7 +10,7 @@
       ],
       "orderEntries": [
         {
-          "name": "Embedded JDK",
+          "name": "jbr-17",
           "type": "SDK"
         },
         {
@@ -29,7 +29,7 @@
       ],
       "orderEntries": [
         {
-          "name": "Embedded JDK",
+          "name": "jbr-17",
           "type": "SDK"
         },
         {
