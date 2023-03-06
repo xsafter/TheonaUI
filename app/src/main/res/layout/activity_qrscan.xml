@@ -24,12 +24,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:background="@color/abstract_first"
+        android:padding="8dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/goback_icon" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/open_camera_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Open Camera"
@@ -41,14 +45,14 @@
         app:layout_constraintVertical_bias="0.083" />
 
     <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="232dp"
-        android:layout_height="232dp"
+        android:id="@+id/qr_image"
+        android:layout_width="312dp"
+        android:layout_height="312dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.522"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button6"
+        app:layout_constraintTop_toBottomOf="@+id/open_camera_button"
         app:layout_constraintVertical_bias="0.347"
         tools:srcCompat="@tools:sample/avatars" />
 
@@ -61,6 +65,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8"
+        app:layout_constraintTop_toBottomOf="@+id/qr_image"
         app:layout_constraintVertical_bias="0.752" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -39,12 +39,6 @@ public class MainActivity extends AppCompatActivity {
         //NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController); //TODO: fragment content not showing
 
-
-        Button goToChatButton = (Button) findViewById(R.id.button2);
-        goToChatButton.setOnClickListener(v -> {
-            //Go to chat/ChatActivity.kt with intent
-            startActivity(new Intent(MainActivity.this, ChatActivity.class));
-        });
     }
 
 

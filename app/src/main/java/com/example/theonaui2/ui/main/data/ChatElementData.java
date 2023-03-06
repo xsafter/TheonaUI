@@ -1,27 +1,16 @@
 package com.example.theonaui2.ui.main.data;
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.util.Log;
-import android.widget.ImageView;
 
-import com.example.theonaui2.R;
 import com.github.javafaker.Faker;
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
 
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
-
-import com.example.theonaui2.ui.MainActivity;
-import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Target;
 
 public class ChatElementData {
     private String chatId;
@@ -86,16 +75,19 @@ public class ChatElementData {
     public ChatElementData createTestData() {
         Faker faker = new Faker();
         ArrayList<Message> cachedMessages = new ArrayList<>();
-        Message msg = new Message(UUID.randomUUID().toString(),
-                faker.date().past(365, TimeUnit.DAYS).getTime(),
-                faker.lorem().sentence(5),
-                faker.name().fullName());
+
+        Message msg = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            msg = new Message(UUID.randomUUID().toString(),
+                    faker.date().past(7, TimeUnit.DAYS).getTime(),
+                    faker.lorem().sentence(5),
+                    faker.name().fullName());
+        }
         cachedMessages.add(msg);
 
         String chatName = faker.name().fullName();
-        int unreadMessagesCount = new Random().nextInt(15);
+        int unreadMessagesCount = new Random().nextInt(10);
 
-        //get empty rounded bitmap
         Bitmap chatImage = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888);
         return new ChatElementData(chatName, chatImage, cachedMessages, unreadMessagesCount);
     }
@@ -118,5 +110,19 @@ public class ChatElementData {
         });
 
         return chatImage[0];
+    }
+
+    @Override
+    public String toString() {
+        return "ChatElementData{" +
+                "chatId='" + chatId + '\'' +
+                ", chatName='" + chatName + '\'' +
+                ", chatImage=" + chatImage +
+                ", cachedMessages=" + cachedMessages +
+                ", unreadMessagesCount=" + unreadMessagesCount +
+                ", lastMessageText='" + lastMessageText + '\'' +
+                ", lastMessageTimestamp=" + lastMessageTimestamp +
+                ", lastMessageSender='" + lastMessageSender + '\'' +
+                '}';
     }
 }

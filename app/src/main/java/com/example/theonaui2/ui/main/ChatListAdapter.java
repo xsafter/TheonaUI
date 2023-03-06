@@ -4,18 +4,19 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.theonaui2.R;
 import com.example.theonaui2.ui.main.data.ChatElementData;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.concurrent.TimeUnit;
 
 public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ViewHolder> {
     private Context context;
@@ -31,20 +32,31 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ViewHo
         ChatElementData chatElementData = chatElementDataArrayList.get(position);
         holder.chatName.setText(chatElementData.getChatName());
         holder.chatImage.setImageBitmap(chatElementData.getChatImage());
-        holder.unreadMessagesCount.setText(String.valueOf(chatElementData.getUnreadMessagesCount()));
+        if (chatElementData.getUnreadMessagesCount() == 0) {
+            holder.unreadMessagesCount.setVisibility(View.GONE);
+        } else
+            holder.unreadMessagesCount.setText(String.valueOf(chatElementData.getUnreadMessagesCount()));
+
         holder.lastMessageText.setText(chatElementData.getLastMessageText());
-        holder.lastMessageSender.setText(chatElementData.getLastMessageSender());
+        //holder.lastMessageSender.setText(chatElementData.getLastMessageSender()); TODO: WTF?
 
-        if (chatElementData.getLastMessageTimestamp() > 24 * 60 * 60 * 1000) {
-            String day = String.valueOf(chatElementData.getLastMessageTimestamp() / (24 * 60 * 60 * 1000));
-            String month = String.valueOf((chatElementData.getLastMessageTimestamp() / (24 * 60 * 60 * 1000)) % (24 * 60 * 60 * 1000));
+        //make time in HH:MM format if it was sent in the last 24 hours
+        //else, in MM::DD format
+        long timeDifference = Math.abs(chatElementData.getLastMessageTimestamp() - Calendar.getInstance().getTimeInMillis());
+        if (timeDifference < TimeUnit.DAYS.toMillis(2)) {
+            Calendar calendar = Calendar.getInstance();
+            SimpleDateFormat simpleDateFormat = null;
+            simpleDateFormat = new SimpleDateFormat("HH:mm");
+            String formattedTimestamp = simpleDateFormat.format(chatElementData.getLastMessageTimestamp());
 
-            holder.lastMessageTime.setText(month + "." + day);
+            holder.lastMessageTime.setText(formattedTimestamp);
         } else {
-            String hour = String.valueOf(chatElementData.getLastMessageTimestamp() / (60 * 60 * 1000));
-            String minute = String.valueOf((chatElementData.getLastMessageTimestamp() / (60 * 60 * 1000)) % (60 * 60 * 1000));
+            Calendar calendar = Calendar.getInstance();
+            SimpleDateFormat simpleDateFormat = null;
+            simpleDateFormat = new SimpleDateFormat("MM.dd");
+            String formattedTimestamp = simpleDateFormat.format(chatElementData.getLastMessageTimestamp());
 
-            holder.lastMessageTime.setText(hour + ":" + minute);
+            holder.lastMessageTime.setText(formattedTimestamp);
         }
     }
 
@@ -58,10 +70,8 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ViewHo
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        // Inflate the custom layout
         View contactView = inflater.inflate(R.layout.item_chat, parent, false);
 
-        // Return a new holder instance
         ViewHolder viewHolder = new ViewHolder(contactView);
         return viewHolder;
     }
@@ -75,32 +85,13 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ViewHo
         public TextView lastMessageSender;
         public ViewHolder(View view) {
             super(view);
+
             chatName = view.findViewById(R.id.chatName);
             chatImage = view.findViewById(R.id.chatImage);
             lastMessageText = view.findViewById(R.id.lastMessageText);
             lastMessageTime = view.findViewById(R.id.lastMessageTime);
             //lastMessageSender = view.findViewById(R.id.lastMessageSender);
             unreadMessagesCount = view.findViewById(R.id.unreadMessagesCount);
-        }
-
-        public void bind(ChatElementData chatElementData) {
-            chatName.setText(chatElementData.getChatName());
-            chatImage.setImageBitmap(chatElementData.getChatImage());
-            unreadMessagesCount.setText(String.valueOf(chatElementData.getUnreadMessagesCount()));
-            lastMessageText.setText(chatElementData.getLastMessageText());
-            //lastMessageSender.setText(chatElementData.getLastMessageSender());
-
-            if (chatElementData.getLastMessageTimestamp() > 24 * 60 * 60 * 1000) {
-                String day = String.valueOf(chatElementData.getLastMessageTimestamp() / (24 * 60 * 60 * 1000));
-                String month = String.valueOf((chatElementData.getLastMessageTimestamp() / (24 * 60 * 60 * 1000)) % (24 * 60 * 60 * 1000));
-
-                lastMessageTime.setText(month + "." + day);
-            } else {
-                String hour = String.valueOf(chatElementData.getLastMessageTimestamp() / (60 * 60 * 1000));
-                String minute = String.valueOf((chatElementData.getLastMessageTimestamp() / (60 * 60 * 1000)) % (60 * 60 * 1000));
-
-                lastMessageTime.setText(hour + ":" + minute);
-            }
         }
     }
 }
