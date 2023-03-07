@@ -35,15 +35,9 @@ X
 (gradle/wrapper/gradle-wrapper.properties,f/b/fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
 q
 Aapp/src/main/java/com/example/theonaui2/ui/main/data/Message.java,e/c/ec26e8cb373dfc03e1e2560729d628e78d9312aa
-p
-@app/src/main/java/com/example/theonaui2/ui/main/MapFragment.java,2/7/27be8e35a7edc16e9a7445be7a2bf62fec35cf7c
-m
-=app/src/main/java/com/example/theonaui2/ui/main/chat/Utils.kt,0/e/0e0fd327889f6d6a6c4792b7809642ce8e66de8b
 o
 ?app/src/main/java/com/example/theonaui2/ui/main/chat/Message.kt,c/1/c155a73456dc77b2184dc0e7c4da719c88808569
 u
 Eapp/src/main/java/com/example/theonaui2/ui/main/chat/MessageStatus.kt,8/c/8cec7e47e918b2617638d96e17d2325d17f37a71
-y
-Iapp/src/main/java/com/example/theonaui2/ui/main/chat/PermissionChecker.kt,3/3/33ff1c7ef76540ea94356bffe88751b09c4effbb
 A
 gradle.properties,2/a/2afbb999f001938c88fa43fc2ef52abf0f8213e4

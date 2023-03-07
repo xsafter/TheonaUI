@@ -1,11 +1,0 @@
-
-x
-java:S1450"\Remove the "mapController" field and declare it as a local variable in the relevant methods.(äµŸ}8±Ø™ÿÔ0
-x
-java:S1450"VRemove the "mapView" field and declare it as a local variable in the relevant methods.(·žÀºúÿÿÿÿ8³Ø™ÿÔ0
-]	java:S125"<This block of commented-out lines of code should be removed.(·£ìùùÿÿÿÿ8¶Ø™ÿÔ0
-`
-java:S1874)">Remove this use of "setBuiltInZoomControls"; it is deprecated.(á¬ª•üÿÿÿÿ8˜þ°˜Ö0
-Q
-java:S1874+"/Remove this use of "setZoom"; it is deprecated.(þÆÕ­øÿÿÿÿ8˜þ°˜Ö0
-]	java:S125,"<This block of commented-out lines of code should be removed.(ÌÅÂ¢ýÿÿÿÿ8¼Ø™ÿÔ0

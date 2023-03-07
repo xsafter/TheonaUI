@@ -54,7 +54,7 @@ public class ChatsFragment extends Fragment {
 
         chats = new ArrayList<>();
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 4; i++) {
             chats.add(new ChatElementData().createTestData(getContext()));
         }
 
