@@ -4,8 +4,10 @@ import static android.graphics.Color.blue;
 import static android.graphics.Color.green;
 import static android.graphics.Color.red;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.ColorMatrix;
@@ -14,27 +16,19 @@ import android.graphics.ColorSpace;
 import android.graphics.Paint;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.VectorDrawable;
 import android.os.Build;
-import android.os.Handler;
-import android.os.Looper;
 import android.support.annotation.ColorInt;
-import android.util.Log;
 
 import androidx.annotation.RequiresApi;
-import androidx.core.graphics.drawable.DrawableCompat;
+import androidx.core.content.ContextCompat;
 
 import com.example.theonaui2.R;
-import com.github.javafaker.Faker;
-import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Target;
 
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.UUID;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 import java.util.function.DoubleUnaryOperator;
 
 public class ChatElementData {
@@ -97,7 +91,7 @@ public class ChatElementData {
     }
 
 
-    public ChatElementData createTestData(Context context) {
+    /*public ChatElementData createTestData(Context context) {
         ExecutorService executor = Executors.newSingleThreadExecutor();
         Handler handler = new Handler(Looper.getMainLooper());
 
@@ -117,16 +111,51 @@ public class ChatElementData {
         String chatName = faker.name().fullName();
         int unreadMessagesCount = new Random().nextInt(10);
 
-        executor.execute(() -> {
-            Drawable drawable = context.getResources().getDrawable(R.drawable.account);
+            Drawable drawable = ContextCompat.getDrawable(context, R.drawable.account);
+            Log.d("ChatElementData", "drawable: " + drawable.toString());
             //change color of bitmap
             Color color = getRandomColor(UUID.randomUUID());
             Log.d("color", String.valueOf(color));
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 DrawableCompat.setTint(drawable, color.getComponentCount());
             }
-        });
+            Log.d("color", String.valueOf(color));
         return new ChatElementData(chatName, chatImage, cachedMessages, unreadMessagesCount);
+    }*/
+
+    public ChatElementData createTestData(Context context) {
+        ArrayList<Message> cachedMessages = new ArrayList<Message>();
+        cachedMessages.add(new Message(UUID.randomUUID().toString(),
+                System.currentTimeMillis(),
+                "📷Photo",
+                "Alex")
+        );
+        return new ChatElementData("test",
+                getBitmap(context, R.drawable.account),
+                cachedMessages,
+                new Random().nextInt(10)
+        );
+    }
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    private static Bitmap getBitmap(VectorDrawable vectorDrawable) {
+        Bitmap bitmap = Bitmap.createBitmap(vectorDrawable.getIntrinsicWidth(),
+                vectorDrawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        vectorDrawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+        vectorDrawable.draw(canvas);
+        return bitmap;
+    }
+
+    private static Bitmap getBitmap(Context context, int drawableId) {
+        Drawable drawable = ContextCompat.getDrawable(context, drawableId);
+        if (drawable instanceof BitmapDrawable) {
+            return BitmapFactory.decodeResource(context.getResources(), drawableId);
+        } else if (drawable instanceof VectorDrawable) {
+            return getBitmap((VectorDrawable) drawable);
+        } else {
+            throw new IllegalArgumentException("unsupported drawable type");
+        }
     }
 
     private Bitmap changeColor(Bitmap bitmap, Color color) {

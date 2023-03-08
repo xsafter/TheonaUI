@@ -54,8 +54,8 @@ public class ChatsFragment extends Fragment {
 
         chats = new ArrayList<>();
 
-        for (int i = 0; i < 4; i++) {
-            chats.add(new ChatElementData().createTestData(getContext()));
+        for (int i = 0; i < 10; i++) {
+            chats.add(new ChatElementData().createTestData(getActivity()));
         }
 
         //sort by last message timestamp(from newest to oldest)

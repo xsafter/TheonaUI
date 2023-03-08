@@ -41,3 +41,19 @@ u
 Eapp/src/main/java/com/example/theonaui2/ui/main/chat/MessageStatus.kt,8/c/8cec7e47e918b2617638d96e17d2325d17f37a71
 A
 gradle.properties,2/a/2afbb999f001938c88fa43fc2ef52abf0f8213e4
+<
+build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
+z
+Japp/src/main/java/com/example/theonaui2/utils/CaptureActivityPortrait.java,7/9/79fa114ebe04d272ba3e2ddc12c93e7d77d05424
+u
+Eapp/src/main/java/com/example/theonaui2/ui/main/ItemClickSupport.java,e/6/e6dcc9e62c7ebfb56494c040b1ff3f4a7bd720bb
+P
+ app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
+l
+<app/src/main/java/com/example/theonaui2/ui/MainActivity.java,4/5/459150d4c643f1733133aeaaacaaf2e65c111f4b
+y
+Iapp/src/main/java/com/example/theonaui2/ui/main/chat/PermissionChecker.kt,3/3/33ff1c7ef76540ea94356bffe88751b09c4effbb
+v
+Fapp/src/main/java/com/example/theonaui2/ui/main/chat/TestActivity.java,f/5/f5a97d45525154a4fd56380e6973d40d371fedc4
+m
+=app/src/main/java/com/example/theonaui2/ui/main/chat/Utils.kt,0/e/0e0fd327889f6d6a6c4792b7809642ce8e66de8b
