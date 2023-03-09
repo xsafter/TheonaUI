@@ -75,7 +75,7 @@
         "jrt:///root/.jdks/jbr-17.0.6!/jdk.zipfs"
       ],
       "sdkType": "JavaSDK",
-      "sdkVersion": "JetBrains Runtime version 17.0.6"
+      "sdkVersion": "version 17.0.6+10"
     }
   ]
 }
